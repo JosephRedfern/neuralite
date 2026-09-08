@@ -1,4 +1,8 @@
+
 # neuralite
+
+**Note: This whole application is entirely vibe-coded - I was mostly interested in the outcome and exploring the
+latent space than I was in the implementation, which is pretty much disposable.**
 
 A browser playground for **neural fields**: paint on the left, and an MLP
 `g(x, y) → rgb` learns to reproduce it on the right, live. The model's
