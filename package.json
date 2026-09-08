@@ -1,0 +1,19 @@
+{
+  "name": "neuralite",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "check": "tsx scripts/check.ts"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.60",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>neuralite — neural field playground</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div id="app">
+      <header id="topbar">
+        <div class="brand">
+          <span class="logo">◈</span>
+          <div>
+            <h1>neuralite</h1>
+            <p class="tagline">g(x, y) &rarr; rgb, fitted live</p>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><label>backend</label><span id="stat-backend">…</span></div>
+          <div class="stat"><label>steps</label><span id="stat-steps">0</span></div>
+          <div class="stat"><label>loss</label><span id="stat-loss">—</span></div>
+          <div class="stat"><label>psnr</label><span id="stat-psnr">—</span></div>
+          <div class="stat"><label>params</label><span id="stat-params">—</span></div>
+          <div class="stat"><label>size</label><span id="stat-size">—</span></div>
+          <div class="stat"><label>steps/s</label><span id="stat-rate">—</span></div>
+        </div>
+
+        <div class="top-actions">
+          <button id="btn-play" class="primary">Pause</button>
+          <button id="btn-reinit">Reinit</button>
+        </div>
+      </header>
+
+      <main id="stage">
+        <section class="pane">
+          <div class="pane-head">
+            <h2>Target</h2>
+            <div class="pane-tools" id="paint-tools"></div>
+          </div>
+          <div class="canvas-wrap" id="paint-wrap"></div>
+          <div class="pane-foot" id="paint-foot"></div>
+        </section>
+
+        <section class="pane">
+          <div class="pane-head">
+            <h2>Field</h2>
+            <div class="pane-tools" id="field-tools"></div>
+          </div>
+          <div class="canvas-wrap" id="field-wrap"></div>
+          <div class="pane-foot">
+            <canvas id="loss-chart" width="640" height="56"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <div id="lower">
+        <aside class="panel" id="panel-controls">
+          <div class="panel-head"><h2>Model &amp; training</h2></div>
+          <div class="panel-body" id="controls"></div>
+        </aside>
+
+        <section class="panel" id="panel-arch">
+          <div class="panel-head">
+            <h2>Architecture</h2>
+            <div class="panel-tools" id="arch-tools"></div>
+          </div>
+          <div class="panel-body" id="arch"></div>
+        </section>
+
+        <section class="panel" id="panel-inspect">
+          <div class="panel-head">
+            <h2 id="inspect-title">Inspector</h2>
+            <div class="tabs" id="inspect-tabs"></div>
+          </div>
+          <div class="panel-body" id="inspect"></div>
+        </section>
+      </div>
+    </div>
+
+    <div id="fatal" hidden></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
